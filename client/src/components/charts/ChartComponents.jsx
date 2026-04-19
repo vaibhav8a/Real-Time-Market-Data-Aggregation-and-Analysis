@@ -1,6 +1,6 @@
 import React from 'react';
 import { LineChart, Line, BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
-import { DashboardCard } from './Card';
+import { DashboardCard } from '../common/Card';
 
 const mockChartData = [
     { time: '09:00', value: 4000 },

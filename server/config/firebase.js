@@ -10,15 +10,19 @@ const serviceAccount = {
     clientEmail: process.env.FIREBASE_CLIENT_EMAIL,
 };
 
+let db, auth;
+
 try {
     admin.initializeApp({
         credential: admin.credential.cert(serviceAccount),
     });
-    console.log('Firebase Admin SDK initialized successfully');
+    console.log('✅ Firebase Admin SDK initialized successfully');
+    db = admin.firestore();
+    auth = admin.auth();
 } catch (error) {
-    console.error('Error initializing Firebase Admin SDK:', error.message);
+    console.warn('⚠️  Firebase initialization warning:', error.message);
+    console.warn('⚠️  Running in demo mode with mock data only');
 }
 
-export const db = admin.firestore();
-export const auth = admin.auth();
+export { db, auth };
 export default admin;

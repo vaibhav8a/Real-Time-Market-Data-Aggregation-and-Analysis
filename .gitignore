@@ -28,6 +28,7 @@ out/
 
 # Firebase
 firebase-debug.log
+server/config/serviceAccountKey.json
 
 # OS files
 Thumbs.db
